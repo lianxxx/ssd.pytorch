@@ -435,7 +435,7 @@ def test_visualization(x,net,threshold):
         detections = y.data
         # scale each detection back up to the image
         scale = torch.Tensor([width, height, width, height])
-        for i in range(detections.size(1)):
+        for i in range(1,detections.size(1)):
             j = 0
             while detections[0, i, j, 0] >= threshold:
                 pt = (detections[0, i, j, 1:] * scale).cpu().numpy()
