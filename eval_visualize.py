@@ -451,7 +451,7 @@ def test_visualization(x,net,threshold):
         return frame
     
 
-    transform = BaseTransform(net.size, (104/256.0, 117/256.0, 123/256.0))
+    transform = BaseTransform(net.size, dataset_mean)
 
     x = predict(x,net,transform)
 #    cv2.imshow('image',x)
